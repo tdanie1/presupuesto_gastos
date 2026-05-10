@@ -96,16 +96,3 @@ pandas
 openpyxl
 ```
 
----
-
-## ✨ Próximas mejoras
-- Exportar informes en PDF/Excel.
-- Filtros avanzados por rango de fechas.
-- Dashboard con indicadores clave (KPIs).
-- Integración con servicios de almacenamiento en la nube.
-
----
-
-👉 Con este README tu repositorio quedará listo para que cualquier persona pueda instalar y usar la aplicación.  
-
-¿Quieres que te prepare también un **badge de despliegue directo en Streamlit Cloud** (un botón en el README que diga “Open in Streamlit”) para que sea aún más fácil abrir la app?
