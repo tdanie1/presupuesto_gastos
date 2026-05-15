@@ -118,5 +118,5 @@ elif menu == "Ver informe":
             hole=0  # si quieres un gráfico tipo dona, pon hole=0.4
         )
 
-# Renderizamos el gráfico en Streamlit
-st.plotly_chart(fig, use_container_width=True)
+        # Renderizamos el gráfico en Streamlit
+        st.plotly_chart(fig, use_container_width=True)
