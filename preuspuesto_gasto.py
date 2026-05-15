@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import json
+import plotly.express as px   # ✅ Importación al inicio
 from datetime import date
 
 # Archivos base
@@ -96,4 +97,26 @@ elif menu == "Ver informe":
         st.subheader("💳 Distribución por forma de pago")
         forma_pago = df.groupby("forma_pago")["monto"].sum().reset_index()
         st.dataframe(forma_pago)
-        st.pie_chart(forma_pago.set_index("forma_pago")["monto"])
+        # st.pie_chart(forma_pago.set_index("forma_pago")["monto"])
+
+        # import plotly.express as px
+        
+        st.subheader("💳 Distribución por forma de pago")
+        
+        # Agrupamos los datos
+        forma_pago = df.groupby("forma_pago")["monto"].sum().reset_index()
+        
+        # Mostramos la tabla
+        st.dataframe(forma_pago)
+        
+        # Creamos el gráfico circular con Plotly
+        fig = px.pie(
+            forma_pago,
+            values="monto",
+            names="forma_pago",
+            title="Distribución por forma de pago",
+            hole=0  # si quieres un gráfico tipo dona, pon hole=0.4
+        )
+
+# Renderizamos el gráfico en Streamlit
+st.plotly_chart(fig, use_container_width=True)
