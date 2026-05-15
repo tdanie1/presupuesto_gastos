@@ -18,6 +18,7 @@ if not os.path.exists(CSV_FILE):
 if not os.path.exists(JSON_FILE):
     presupuesto_init = {
         "Alimentación": 1500000,
+        "Salud": 50000,
         "Transporte": 700000,
         "Vivienda": 2000000,
         "Entretenimiento": 500000,
@@ -35,7 +36,7 @@ if menu == "Ingresar gasto":
 
     with st.form("form_gasto"):
         fecha = st.date_input("Fecha", value=date.today())
-        categoria = st.selectbox("Categoría", ["Alimentación","Transporte","Vivienda","Entretenimiento","Otros"])
+        categoria = st.selectbox("Categoría", ["Alimentación","Salud","Transporte","Vivienda","Entretenimiento","Otros"])
         detalle = st.text_input("Detalle del gasto")
         monto = st.number_input("Monto", min_value=0, step=1000)
         forma_pago = st.selectbox("Forma de pago", ["Efectivo","Tarjeta de credito","Debito","Transferencia","Nequi","Daviplata","Bre-B"])
